@@ -1,13 +1,14 @@
 require 'rails_helper'
 
-RSpec.describe Customer, type: :model do
+RSpec.describe Project, type: :model do
   subject do
     described_class.new(
-      title: 'Kataplum',
+      name: 'Kataplum',
       description: 'text',
-      url: 'http address'
+      url: 'something'
     )
   end
+
   it 'is valid with valid attributes' do
     expect(subject).to be_valid
   end
@@ -17,8 +18,8 @@ RSpec.describe Customer, type: :model do
     expect(subject).to_not be_valid
   end
 
-  it 'is not valid without a title' do
-    subject.title = nil
+  it 'is not valid without a name' do
+    subject.name = nil
     expect(subject).to_not be_valid
   end
 
